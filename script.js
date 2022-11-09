@@ -16,6 +16,8 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
 
+reload();
+
 function displayMessage(someMessage) {
   message.textContent = someMessage;
 }
@@ -31,7 +33,9 @@ function onCheckBtnClick(e) {
     body.style.backgroundColor = '#60b347';
     resultNumber.textContent = guess;
     if (score > highscore) {
+      highscore = score;
       highscoreEl.textContent = score;
+      localStorage.setItem('highscore', `${highscore}`);
     }
   } else if (guess !== secretNumber) {
     if (score > 1) {
@@ -54,6 +58,14 @@ function onAgainBtnClick(e) {
   scoreEl.textContent = score;
   resultNumber.textContent = '?';
   inputEl.value = '';
-
   body.style.backgroundColor = '#222';
+}
+
+function reload() {
+  const savedHighscore = localStorage.getItem('highscore', `${highscore}`);
+  console.log(savedHighscore);
+  if (savedHighscore) {
+    highscore = savedHighscore;
+    highscoreEl.textContent = highscore;
+  }
 }
