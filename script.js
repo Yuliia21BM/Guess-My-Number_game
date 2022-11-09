@@ -32,9 +32,11 @@ function onCheckBtnClick(e) {
     displayMessage('🎉 Correct Number!');
     body.style.backgroundColor = '#60b347';
     resultNumber.textContent = guess;
+    // checkBtn.setAttribute('disabled', 'disable');
+    // checkBtn.style.backgroundColor = '#ccc';
     if (score > highscore) {
       highscore = score;
-      highscoreEl.textContent = score;
+      highscoreEl.textContent = highscore;
       localStorage.setItem('highscore', `${highscore}`);
     }
   } else if (guess !== secretNumber) {
@@ -59,6 +61,8 @@ function onAgainBtnClick(e) {
   resultNumber.textContent = '?';
   inputEl.value = '';
   body.style.backgroundColor = '#222';
+  // checkBtn.removeAttribute('disabled');
+  // checkBtn.style.backgroundColor = '#eee';
 }
 
 function reload() {
