@@ -44,10 +44,9 @@ function onCheckBtnClick(e) {
       displayMessage(guess > secretNumber ? '📈 Too high!' : '📉 Too low!');
       score -= 1;
       scoreEl.textContent = score;
+    } else {
+      displayMessage('💥 You lost the game!');
     }
-  } else {
-    displayMessage('💥 You lost the game!');
-    scoreEl.textContent = 0;
   }
 }
 
