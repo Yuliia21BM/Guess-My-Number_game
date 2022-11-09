@@ -40,7 +40,7 @@ function onCheckBtnClick(e) {
       localStorage.setItem('highscore', `${highscore}`);
     }
   } else if (guess !== secretNumber) {
-    if (score > 1) {
+    if (score > 0) {
       displayMessage(guess > secretNumber ? '📈 Too high!' : '📉 Too low!');
       score -= 1;
       scoreEl.textContent = score;
