@@ -32,6 +32,7 @@ function onCheckBtnClick(e) {
     displayMessage('🎉 Correct Number!');
     body.style.backgroundColor = '#60b347';
     resultNumber.textContent = guess;
+    resultNumber.style.width = '30rem';
     // checkBtn.setAttribute('disabled', 'disable');
     // checkBtn.style.backgroundColor = '#ccc';
     if (score > highscore) {
@@ -58,6 +59,7 @@ function onAgainBtnClick(e) {
   displayMessage('Start guessing...');
   scoreEl.textContent = score;
   resultNumber.textContent = '?';
+  resultNumber.style.width = '15rem';
   inputEl.value = '';
   body.style.backgroundColor = '#222';
   // checkBtn.removeAttribute('disabled');
